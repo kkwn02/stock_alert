@@ -1,7 +1,10 @@
 import requests
 from bs4 import BeautifulSoup as soup
-import json
-import re
+import json, re, selenium, time
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
 
 def findItemLink(session, productsLink, itemName, color):
     response = session.get(productsLink)
@@ -70,5 +73,25 @@ def addToCart(session, productLink, itemId, size):
     response = session.post(url, headers=headers, data=payload)
     return response.status_code
 
-
+def checkOut(driver, url, productKeyWord, itemId):
+    driver.get(url)
+    if (productKeyWord not in driver.title.lower()):
+        print('Product not found')
+        return None
+    wait = WebDriverWait(driver, 10)
+    element = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'input[type="radio"][value="L"]')))
+    driver.execute_script("arguments[0].click();", element)
+    wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'button[name="add"]'))).click()
+    wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'button[type="submit"][name="checkout"]'))).click()
+    wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input[placeholder="Email"]'))).send_keys('johnwickdog@gmail.com')
+    wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input[placeholder="First name"]'))).send_keys('John')
+    wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input[placeholder="Last name"]'))).send_keys('Wick')
+    wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input[placeholder="Address"]'))).send_keys('2 Meadowbrook')
+    wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'button[aria-label="Close suggestions"]'))).click()
+    wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input[autocomplete="shipping address-line2"]'))).send_keys('#24')
+    wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, 'input[placeholder="City"]'))).send_keys('Irvine')
+    Select(driver.find_element_by_css_selector('select[autocomplete="shipping country"]')).select_by_value("United States")
+    Select(driver.find_element_by_css_selector('select[data-backup="province"]')).select_by_value("Virginia")
+    time.sleep(20)
+    # return None
 
