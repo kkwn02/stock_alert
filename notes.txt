@@ -1,0 +1,25 @@
+var meta = {"products":
+[{"id":6711650484321,"gid":"gid:\/\/shopify\/Product\/6711650484321","vendor":"eric emanuel","type":"",
+"variants":[
+{"id":39729371971681,"price":"138.00","name":"EE® BOUCLE SWEATS - S","public_title":"S","sku":"BOUCLE-PURP-021"},
+{"id":39729372004449,"price":"138.00","name":"EE® BOUCLE SWEATS - M","public_title":"M","sku":"BOUCLE-PURP-021"},
+{"id":39729372037217,"price":"138.00","name":"EE® BOUCLE SWEATS - L","public_title":"L","sku":"BOUCLE-PURP-021"},
+{"id":39729372069985,"price":"138.00","name":"EE® BOUCLE SWEATS - XL","public_title":"XL","sku":"BOUCLE-PURP-021"},
+{"id":39729372102753,"price":"138.00","name":"EE® BOUCLE SWEATS - XXL","public_title":"XXL","sku":"BOUCLE-PURP-021"}
+]},
+{"id":6711649042529,"gid":"gid:\/\/shopify\/Product\/6711649042529","vendor":"eric emanuel","type":"",
+"variants":[
+{"id":39729362501729,"price":"138.00","name":"EE® BOUCLE SWEATS - S","public_title":"S","sku":"BOUCLE-ORANGE-NAVY"},
+{"id":39729362534497,"price":"138.00","name":"EE® BOUCLE SWEATS - M","public_title":"M","sku":"BOUCLE-ORANGE-NAVY"},
+{"id":39729362567265,"price":"138.00","name":"EE® BOUCLE SWEATS - L","public_title":"L","sku":"BOUCLE-ORANGE-NAVY"},
+{"id":39729362600033,"price":"138.00","name":"EE® BOUCLE SWEATS - XL","public_title":"XL","sku":"BOUCLE-ORANGE-NAVY"},
+{"id":39729362632801,"price":"138.00","name":"EE® BOUCLE SWEATS - XXL","public_title":"XXL","sku":"BOUCLE-ORANGE-NAVY"}
+]},
+{"id":6698018209889,"gid":"gid:\/\/shopify\/Product\/6698018209889","vendor":"eric emanuel","type":"",
+"variants":[
+{"id":39685221449825,"price":"138.00","name":"EE® BOUCLE SWEATS - S","public_title":"S","sku":"RED-BOUCLE"},
+{"id":39685221482593,"price":"138.00","name":"EE® BOUCLE SWEATS - M","public_title":"M","sku":"RED-BOUCLE"},
+{"id":39685221515361,"price":"138.00","name":"EE® BOUCLE SWEATS - L","public_title":"L","sku":"RED-BOUCLE"},
+{"id":39685221548129,"price":"138.00","name":"EE® BOUCLE SWEATS - XL","public_title":"XL","sku":"RED-BOUCLE"},
+{"id":39685221580897,"price":"138.00","name":"EE® BOUCLE SWEATS - XXL","public_title":"XXL","sku":"RED-BOUCLE"}]
+}],"page":{"pageType":"collection","resourceType":"collection","resourceId":172144754785}};

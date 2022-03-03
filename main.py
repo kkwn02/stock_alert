@@ -1,23 +1,38 @@
-import requests
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-from util.stock import *
+from util.alert_manager import AlertManager
 
-s = requests.Session();
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+# Pants
+# Sweatshirts
+# Bags
+# Hats
+# Shirts
+# Accessories
+# Shorts
+# Skate
+# Tops/Sweaters
+# T-Shirts
+# Jackets
+# Shoes
 
-link = 'https://www.ericemanuel.com/collections/products'
-itemLink = 'https://www.ericemanuel.com' + findItemLink(s, link, 'boucle', 'Pink')
+am = AlertManager()
+print('Type clothing category')
+category = input()
+print('Type clothing name')
+name = input()
+print('Type clothing color')
+color = input()
+print('Type clothing size')
+size = input()
+print('Lastly type phone number to be notified')
+number = input()
+am.add_alert('T-Shirts', 'Classic Logo Tee','White','Large','+19498367866')
+am.add_alert(category, name, color, size, number)
+print('Alert added successfully')
+print('Current alerts are:')
+print(am.list_alerts())
+am.check_alerts()
 
-if itemLink and checkItemStock(s, itemLink, 'XL'):
-    itemId = getItemId(s, link, 'XL', 'red')
 
-if itemId:
-    print(itemId)
-    statusCode = addToCart(s, itemLink, itemId, 'XL')
-    if statusCode == 200:
-        print('Item added successfully')
 
-checkOut(driver, itemLink, 'boucle', itemId)
+
+
+
